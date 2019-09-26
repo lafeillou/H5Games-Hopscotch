@@ -27,16 +27,16 @@
     <div class="menu-board-wrap" :class="{isOpen: isOpen}" v-hammer:tap="tapMenu">
       <ul id="menu">
         <li>
-          <div class="title">Homepage</div>
+          <div class="title" data-index="1">Homepage</div>
         </li>
         <li>
-          <div class="title">How to play</div>
+          <div class="title" data-index="4">How to play</div>
         </li>
         <li>
-          <div class="title">How to play (the details)</div>
+          <div class="title" data-index="6">How to play (the details)</div>
         </li>
         <li>
-          <div class="title">Before you start</div>
+          <div class="title" data-index="9">Before you start</div>
         </li>
       </ul>
     </div>
@@ -119,18 +119,17 @@ export default {
     window.removeEventListener("resize", this.renderResize, false);
   },
   methods: {
-    selectMenuItem(pageNum) {
-      this.isOpen = false;
-      setTimeout(() => {
-        this.$root.eventHub.$emit("goToPage", pageNum);
-      }, 300);
-    },
+    // selectMenuItem(pageNum) {
+    //   this.isOpen = false;
+    //   this.$root.eventHub.$emit("goToPage", pageNum);
+    // },
     tapMenu(e) {
       console.log(e);
       if (
         e.target.tagName.toLowerCase() === "div" &&
         e.target.className.toLowerCase() === "title"
       ) {
+        this.$root.eventHub.$emit("goToPage", $(e.target).data("index"));
         return;
       }
       this.isOpen = !this.isOpen;
