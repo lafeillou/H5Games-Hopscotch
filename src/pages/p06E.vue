@@ -17,7 +17,7 @@ export default {
         autoplay: true,
         controls: true,
         // 下面这个需要更换，需要动画团队提供
-        poster: "assets/video/poster001.jpg",
+        poster: "assets/video/poster006E.jpg",
         width: document.documentElement.clientWidth - 38,
         sources: [
           {
