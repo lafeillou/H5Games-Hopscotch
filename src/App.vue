@@ -131,6 +131,9 @@ export default {
         e.target.className.toLowerCase() === "title"
       ) {
         this.$root.eventHub.$emit("goToPage", $(e.target).data("index"));
+        setTimeout(() => {
+          this.isOpen = !this.isOpen;
+        }, 0);
         return;
       }
       this.isOpen = !this.isOpen;
@@ -219,6 +222,21 @@ body {
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+// 播放按钮的大小和位置
+.video-js {
+  .vjs-big-play-button {
+    display: none;
+    @include px2rem(width, 200);
+    border-radius: 50%;
+    @include px2rem(height, 200);
+    @include px2rem(line-height, 200);
+    @include px2rem(font-size, 100);
+    top: 50%;
+    left: 50%;
+    @include px2rem(margin-top, -100);
+    @include px2rem(margin-left, -100);
+  }
 }
 #app {
   display: none;
@@ -312,20 +330,6 @@ body {
     background-size: 100% 100%;
 
     text-indent: -9999999px;
-  }
-  // 播放按钮的大小和位置
-  .video-js {
-    .vjs-big-play-button {
-      @include px2rem(width, 200);
-      border-radius: 50%;
-      @include px2rem(height, 200);
-      @include px2rem(line-height, 200);
-      @include px2rem(font-size, 100);
-      top: 50%;
-      left: 50%;
-      @include px2rem(margin-top, -100);
-      @include px2rem(margin-left, -100);
-    }
   }
 
   // 全局 yes no btn

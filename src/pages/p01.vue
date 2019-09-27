@@ -1,11 +1,12 @@
 <template>
-  <div class="P P01" v-hammer:tap="onTap">
+  <div class="P P01">
     <video-player :options="videoOptions" />
   </div>
 </template>
 
 <script>
 import VideoPlayer from "@/components/VideoPlayer.vue";
+// import $ from "jquery";
 
 export default {
   components: {
@@ -27,10 +28,12 @@ export default {
       }
     };
   },
-  mounted() {},
-  methods: {
-    onTap() {}
-  }
+  mounted() {
+    // this.$nextTick(() => {
+    //   $(".video-js .vjs-big-play-button").css({ display: "block !important" });
+    // });
+  },
+  methods: {}
 };
 </script>
 
