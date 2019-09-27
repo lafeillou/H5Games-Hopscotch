@@ -125,6 +125,7 @@ export default {
     // },
     tapMenu(e) {
       // console.log(e);
+      e.srcEvent.stopPropagation();
       if (
         e.target.tagName.toLowerCase() === "div" &&
         e.target.className.toLowerCase() === "title"
@@ -133,6 +134,22 @@ export default {
         return;
       }
       this.isOpen = !this.isOpen;
+      return false;
+    },
+    onTap() {
+      if (this.currentPage > 14) {
+        return;
+      }
+      if (this.currentPage === 6) {
+        this.currentPage = 12;
+        return;
+      }
+
+      if (this.currentPage < 14) {
+        this.currentPage++;
+      } else {
+        this.currentPage = 1;
+      }
     },
     onSwipe(event) {
       if (this.currentPage > 14) {
