@@ -223,21 +223,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-// 播放按钮的大小和位置
-.video-js {
-  .vjs-big-play-button {
-    display: none;
-    @include px2rem(width, 200);
-    border-radius: 50%;
-    @include px2rem(height, 200);
-    @include px2rem(line-height, 200);
-    @include px2rem(font-size, 100);
-    top: 50%;
-    left: 50%;
-    @include px2rem(margin-top, -100);
-    @include px2rem(margin-left, -100);
-  }
-}
+
 #app {
   display: none;
   @include px2rem(height, 750);
@@ -249,7 +235,21 @@ body {
   .vjs-control-bar {
     display: none !important;
   }
-
+  // 播放按钮的大小和位置
+  .video-js {
+    .vjs-big-play-button {
+      display: none;
+      @include px2rem(width, 200);
+      border-radius: 50%;
+      @include px2rem(height, 200);
+      @include px2rem(line-height, 200);
+      @include px2rem(font-size, 100);
+      top: 50%;
+      left: 50%;
+      @include px2rem(margin-top, -100);
+      @include px2rem(margin-left, -100);
+    }
+  }
   .P {
     width: 100%;
     height: 100%;

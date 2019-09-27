@@ -6,7 +6,7 @@
 
 <script>
 import VideoPlayer from "@/components/VideoPlayer.vue";
-// import $ from "jquery";
+import $ from "jquery";
 
 export default {
   components: {
@@ -28,11 +28,7 @@ export default {
       }
     };
   },
-  mounted() {
-    // this.$nextTick(() => {
-    //   $(".video-js .vjs-big-play-button").css({ display: "block !important" });
-    // });
-  },
+  mounted() {},
   methods: {}
 };
 </script>
