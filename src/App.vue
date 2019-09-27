@@ -180,6 +180,9 @@ export default {
           this.currentPage--;
         }
       }
+      // setTimeout(() => {
+      //   $("#video-js_html5_api")[0].play();
+      // }, 0);
     },
     // 判断是否横屏
     renderResize() {

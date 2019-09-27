@@ -7,6 +7,7 @@
       x-webkit-airplay="allow"
       ref="videoPlayer"
       class="video-js"
+      id="video-js"
     ></video>
   </div>
 </template>
