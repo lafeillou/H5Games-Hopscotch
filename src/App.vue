@@ -36,7 +36,7 @@
           <div class="title" data-index="6">How to play (the details)</div>
         </li>
         <li>
-          <div class="title" data-index="9">Before you start</div>
+          <div class="title" data-index="14">Before you start</div>
         </li>
       </ul>
     </div>
@@ -135,9 +135,17 @@ export default {
       this.isOpen = !this.isOpen;
     },
     onSwipe(event) {
+      if (this.currentPage > 14) {
+        return;
+      }
       // 从右向左滑动
       if (event.direction === 2) {
-        if (this.currentPage < 22) {
+        if (this.currentPage === 6) {
+          this.currentPage = 12;
+          return;
+        }
+
+        if (this.currentPage < 14) {
           this.currentPage++;
         } else {
           this.currentPage = 1;
@@ -145,6 +153,10 @@ export default {
         // 从左向右滑动
       } else if (event.direction === 4) {
         if (this.currentPage > 1) {
+          if (this.currentPage === 12) {
+            this.currentPage = 6;
+            return;
+          }
           this.currentPage--;
         }
       }
