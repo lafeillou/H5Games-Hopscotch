@@ -6,7 +6,7 @@
 
 <script>
 import VideoPlayer from "@/components/VideoPlayer.vue";
-import $ from "jquery";
+// import $ from "jquery";
 
 export default {
   components: {

@@ -49,7 +49,7 @@ export default {
     @include px2rem(top, 32);
     @include px2rem(width, 1000);
     @include px2rem(height, 116);
-    text-indent: -99999999999999px;
+    font-size: 0;
     background: url("../assets/images/btns/006/f006_btn01.png") no-repeat 0 0;
     background-size: 100% auto;
   }
