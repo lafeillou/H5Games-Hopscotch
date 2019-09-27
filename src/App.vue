@@ -124,7 +124,7 @@ export default {
     //   this.$root.eventHub.$emit("goToPage", pageNum);
     // },
     tapMenu(e) {
-      console.log(e);
+      // console.log(e);
       if (
         e.target.tagName.toLowerCase() === "div" &&
         e.target.className.toLowerCase() === "title"
@@ -228,43 +228,43 @@ body {
     }
     > ul {
       display: inline-block;
-      @include px2rem(margin-left, 150);
-      @include px2rem(margin-top, 35);
+      @include px2rem(margin-left, 20);
+      @include px2rem(margin-top, 105);
       > li {
         width: 100%;
 
         > div.title {
-          @include px2rem(height, 53);
+          @include px2rem(height, 80);
           text-indent: -9999999px;
         }
         // text-indent: -999999px;
         &:nth-child(1) {
           > div.title {
             background: url("./assets/images/step01_bg.png") no-repeat 0 0;
-            background-size: 100% auto;
+            background-size: auto 100%;
           }
-          @include px2rem(width, 221);
+          @include px2rem(width, 421);
         }
         &:nth-child(2) {
           > div.title {
             background: url("./assets/images/step02_bg.png") no-repeat 0 0;
-            background-size: 100% auto;
+            background-size: auto 100%;
           }
-          @include px2rem(width, 235);
+          @include px2rem(width, 421);
         }
         &:nth-child(3) {
           > div.title {
             background: url("./assets/images/step03_bg.png") no-repeat 0 0;
-            background-size: 100% auto;
+            background-size: auto 100%;
           }
-          @include px2rem(width, 411);
+          @include px2rem(width, 751);
         }
         &:nth-child(4) {
           > div.title {
             background: url("./assets/images/step04_bg.png") no-repeat 0 0;
-            background-size: 100% auto;
+            background-size: auto 100%;
           }
-          @include px2rem(width, 296);
+          @include px2rem(width, 576);
         }
       }
     }
@@ -293,6 +293,79 @@ body {
       @include px2rem(margin-top, -100);
       @include px2rem(margin-left, -100);
     }
+  }
+
+  // 全局 yes no btn
+  .g-btn {
+    font-size: 0;
+  }
+  .g-yes-btn {
+    @include px2rem(width, 164);
+    @include px2rem(height, 84);
+    background: url("./assets/images/btn_yes.png") no-repeat 0 0;
+    background-size: 100% auto;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .g-no-btn {
+    @include px2rem(width, 162);
+    @include px2rem(height, 84);
+    background: url("./assets/images/btn_no.png") no-repeat 0 0;
+    background-size: 100% auto;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .g-ready-btn {
+    @include px2rem(width, 170);
+    @include px2rem(height, 84);
+    background: url("./assets/images/btn_ready.png") no-repeat 0 0;
+    background-size: 100% auto;
+    position: absolute;
+    @include px2rem(left, 1123);
+    @include px2rem(top, 619);
+    cursor: pointer;
+  }
+
+  .g-back-btn {
+    @include px2rem(width, 170);
+    @include px2rem(height, 84);
+    background: url("./assets/images/btn_back.png") no-repeat 0 0;
+    background-size: 100% auto;
+    position: absolute;
+    @include px2rem(left, 1123);
+    @include px2rem(top, 619);
+    cursor: pointer;
+  }
+
+  .g-next-btn {
+    @include px2rem(width, 170);
+    @include px2rem(height, 84);
+    background: url("./assets/images/btn_next.png") no-repeat 0 0;
+    background-size: 100% auto;
+    position: absolute;
+    @include px2rem(left, 1123);
+    @include px2rem(top, 619);
+    cursor: pointer;
+  }
+
+  .g-ok-btn {
+    @include px2rem(width, 170);
+    @include px2rem(height, 84);
+    background: url("./assets/images/btn_ok.png") no-repeat 0 0;
+    background-size: 100% auto;
+    position: absolute;
+    @include px2rem(left, 1123);
+    @include px2rem(top, 619);
+    cursor: pointer;
+  }
+
+  .g-level-btn {
+    @include px2rem(width, 255);
+    @include px2rem(height, 77);
+    position: absolute;
+    cursor: pointer;
   }
 }
 </style>

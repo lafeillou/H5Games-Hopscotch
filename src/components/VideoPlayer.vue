@@ -6,6 +6,7 @@
 
 <script>
 import videojs from "video.js";
+// import $ from "jquery";
 
 export default {
   name: "VideoPlayer",
@@ -23,13 +24,7 @@ export default {
     };
   },
   mounted() {
-    this.player = videojs(
-      this.$refs.videoPlayer,
-      this.options,
-      function onPlayerReady() {
-        console.log("onPlayerReady", this);
-      }
-    );
+    this.player = videojs(this.$refs.videoPlayer, this.options, () => {});
   },
   beforeDestroy() {
     if (this.player) {
