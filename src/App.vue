@@ -235,6 +235,23 @@ body {
   overflow: hidden;
   // background: #000 url("/assets/images/bg.png") no-repeat center center;
   background-size: 100% auto;
+  .step {
+    @include px2rem(width, 287);
+    @include px2rem(height, 168);
+    position: absolute;
+    border-color: #02728d;
+    @include px2rem(border-width, 5);
+    border-style: solid;
+    transition: border-color 0.3s;
+    transition: transform 0.3s;
+    background-size: 100% 100%;
+    &:hover {
+      border-color: red;
+      transition: border-color 0.3s;
+      transform: scale(1.1);
+      transition: transform 0.3s;
+    }
+  }
   .vjs-control-bar {
     display: none !important;
   }

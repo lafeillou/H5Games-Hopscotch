@@ -2,6 +2,11 @@
   <div class="P P06">
     <video-player :options="videoOptions" />
     <div class="btn01">How to play:the details</div>
+    <div class="step step1" v-hammer:tap="() => {goToDelay(7)}"></div>
+    <div class="step step2" v-hammer:tap="() => {goToDelay(8)}"></div>
+    <div class="step step3" v-hammer:tap="() => {goToDelay(9)}"></div>
+    <div class="step step4" v-hammer:tap="() => {goToDelay(10)}"></div>
+    <div class="step step5" v-hammer:tap="() => {goToDelay(11)}"></div>
     <div class="g-btn g-ready-btn" v-hammer:tap="() => {goTo(12)}">Ready</div>
   </div>
 </template>
@@ -32,6 +37,11 @@ export default {
   },
   mounted() {},
   methods: {
+    goToDelay(pageNum) {
+      setTimeout(() => {
+        this.goTo(pageNum);
+      }, 500);
+    },
     goTo(pageNum) {
       this.$root.eventHub.$emit("goToPage", pageNum);
     }
@@ -57,5 +67,34 @@ export default {
   //   @include px2rem(left, 1123);
   //   @include px2rem(top, 619);
   // }
+  .step1 {
+    @include px2rem(left, 343 - 5);
+    @include px2rem(top, 194 - 5);
+    background: url("../assets/images/steps/step1.png") no-repeat 0 0;
+  }
+
+  .step2 {
+    @include px2rem(left, 752 - 5);
+    @include px2rem(top, 194 - 5);
+    background: url("../assets/images/steps/step2.png") no-repeat 0 0;
+  }
+
+  .step3 {
+    @include px2rem(left, 159- 5);
+    @include px2rem(top, 427 - 5);
+    background: url("../assets/images/steps/step3.png") no-repeat 0 0;
+  }
+
+  .step4 {
+    @include px2rem(left, 534 - 5);
+    @include px2rem(top, 427 - 5);
+    background: url("../assets/images/steps/step4.png") no-repeat 0 0;
+  }
+
+  .step5 {
+    @include px2rem(left, 906 - 5);
+    @include px2rem(top, 427 - 5);
+    background: url("../assets/images/steps/step5.png") no-repeat 0 0;
+  }
 }
 </style>
