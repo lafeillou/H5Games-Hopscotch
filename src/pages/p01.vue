@@ -38,8 +38,5 @@ export default {
 @import "@/assets/sass/mixin.scss";
 
 .P01 {
-  .vjs-control-bar {
-    display: none !important;
-  }
 }
 </style>

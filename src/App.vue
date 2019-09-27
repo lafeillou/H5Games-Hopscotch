@@ -211,6 +211,10 @@ body {
   overflow: hidden;
   // background: #000 url("/assets/images/bg.png") no-repeat center center;
   background-size: 100% auto;
+  .vjs-control-bar {
+    display: none !important;
+  }
+
   .P {
     width: 100%;
     height: 100%;

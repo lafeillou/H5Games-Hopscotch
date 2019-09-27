@@ -16,7 +16,7 @@ export default {
     return {
       videoOptions: {
         autoplay: true,
-        controls: false,
+        controls: true,
         // 下面这个需要更换，需要动画团队提供
         poster: "assets/video/poster006D.jpg",
         width: document.documentElement.clientWidth - 38,
