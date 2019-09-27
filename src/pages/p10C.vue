@@ -1,7 +1,7 @@
 <template>
   <div class="P P10C">
     <video-player :options="videoOptions" />
-    <div class="g-btn g-ready-btn" v-hammer:tap="()=> {goTo(20)}">Ready</div>
+    <div class="g-btn g-ready-btn" v-hammer:tap="()=> {goTo(22)}">Ready</div>
   </div>
 </template>
 

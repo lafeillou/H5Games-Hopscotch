@@ -2,7 +2,7 @@
   <div class="P P09">
     <video-player :options="videoOptions" />
     <div class="g-btn g-level-btn level1" v-hammer:tap="() => {goTo(15)}">Level1</div>
-    <div class="g-btn g-level-btn level2" v-hammer:tap="() => {goTo(17)}">Level2</div>
+    <div class="g-btn g-level-btn level2" v-hammer:tap="() => {goTo(18)}">Level2</div>
     <div class="g-btn g-level-btn level3" v-hammer:tap="() => {goTo(16)}">Level3</div>
   </div>
 </template>
