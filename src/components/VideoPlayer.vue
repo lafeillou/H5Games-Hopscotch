@@ -1,6 +1,13 @@
 <template>
   <div>
-    <video ref="videoPlayer" class="video-js"></video>
+    <video
+      webkit-playsinline
+      playsinline
+      x5-playsinline
+      x-webkit-airplay="allow"
+      ref="videoPlayer"
+      class="video-js"
+    ></video>
   </div>
 </template>
 
