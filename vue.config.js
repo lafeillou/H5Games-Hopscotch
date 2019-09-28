@@ -4,6 +4,7 @@ module.exports = {
   //     new MyAwesomeWebpackPlugin()
   //   ]
   // },
+  publicPath: "./",
   chainWebpack: config => {
     config.module
       .rule("Snap")
