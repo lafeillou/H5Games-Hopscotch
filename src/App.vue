@@ -289,6 +289,7 @@ body {
   overflow: hidden;
   // background: #000 url("/assets/images/bg.png") no-repeat center center;
   background-size: 100% auto;
+  background-color: #fff;
   .step {
     @include px2rem(width, 287);
     @include px2rem(height, 168);
@@ -334,6 +335,7 @@ body {
   .P {
     width: 100%;
     height: 100%;
+    background-color: #fff;
   }
   .indexPageFontSize {
     position: absolute;
@@ -382,14 +384,14 @@ body {
             background: url("./assets/images/step02_bg.png") no-repeat 0 0;
             background-size: auto 100%;
           }
-          @include px2rem(width, 421);
+          @include px2rem(width, 461);
         }
         &:nth-child(3) {
           > div.title {
             background: url("./assets/images/step03_bg.png") no-repeat 0 0;
             background-size: auto 100%;
           }
-          @include px2rem(width, 751);
+          @include px2rem(width, 791);
         }
         &:nth-child(4) {
           > div.title {

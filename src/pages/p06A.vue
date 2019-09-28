@@ -1,7 +1,8 @@
 <template>
   <div class="P P06A">
     <video-player :options="videoOptions" />
-    <div class="g-btn g-back-btn" v-hammer:tap="()=> {goTo(6)}">Back</div>
+    <div class="g-btn back" v-hammer:tap="()=> {goTo(6)}">Back</div>
+    <div class="g-btn next" v-hammer:tap="()=> {goTo(8)}">Next</div>
   </div>
 </template>
 
@@ -42,5 +43,25 @@ export default {
 @import "@/assets/sass/mixin.scss";
 
 .P06A {
+  .back {
+    @include px2rem(width, 170);
+    @include px2rem(height, 84);
+    background: url("../assets/images/btn_back.png") no-repeat 0 0;
+    background-size: 100% auto;
+    position: absolute;
+    @include px2rem(left, 35);
+    @include px2rem(top, 619);
+    cursor: pointer;
+  }
+  .next {
+    @include px2rem(width, 170);
+    @include px2rem(height, 84);
+    background: url("../assets/images/btn_next.png") no-repeat 0 0;
+    background-size: 100% auto;
+    position: absolute;
+    @include px2rem(left, 1123);
+    @include px2rem(top, 619);
+    cursor: pointer;
+  }
 }
 </style>
