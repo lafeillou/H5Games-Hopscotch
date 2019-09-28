@@ -1,37 +1,17 @@
 <template>
-  <div class="P P11C" v-hammer:tap="onTap">
-    <video-player :options="videoOptions" />
+  <div class="P P11C">
+    <div class="static-page-bg"></div>
   </div>
 </template>
 
 <script>
-import VideoPlayer from "@/components/VideoPlayer.vue";
-
 export default {
-  components: {
-    VideoPlayer
-  },
+  components: {},
   data() {
-    return {
-      videoOptions: {
-        autoplay: true,
-        controls: true,
-        // 下面这个需要更换，需要动画团队提供
-        poster: "assets/video/poster011C.jpg",
-        width: document.documentElement.clientWidth - 38,
-        sources: [
-          {
-            src: "assets/video/011C.mp4",
-            type: "video/mp4"
-          }
-        ]
-      }
-    };
+    return {};
   },
   mounted() {},
-  methods: {
-    onTap() {}
-  }
+  methods: {}
 };
 </script>
 
@@ -39,5 +19,14 @@ export default {
 @import "@/assets/sass/mixin.scss";
 
 .P11C {
+  .static-page-bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: url("../assets/images/011C.jpg") no-repeat 0 0;
+    background-size: 100% auto;
+  }
 }
 </style>
