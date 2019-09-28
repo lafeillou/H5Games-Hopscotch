@@ -32,7 +32,11 @@ export default {
   mounted() {},
   methods: {
     goTo(pageNum) {
+      let audio = document.getElementById("music");
+      audio.src = "assets/audio/game.mp3";
+      audio.play();
       this.$root.eventHub.$emit("goToPage", pageNum);
+      // this.$root.eventHub.$emit("cutMusicEvent", "assets/audio/game.mp3");
     }
   }
 };

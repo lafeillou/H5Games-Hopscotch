@@ -1,6 +1,7 @@
 <template>
   <div class="P P09C" v-hammer:tap="onTap">
     <video-player :options="videoOptions" />
+    <div class="g-btn g-ok-btn" v-hammer:tap="() => {goTo(19)}">OK</div>
   </div>
 </template>
 
@@ -30,7 +31,9 @@ export default {
   },
   mounted() {},
   methods: {
-    onTap() {}
+    goTo(pageNum) {
+      this.$root.eventHub.$emit("goToPage", pageNum);
+    }
   }
 };
 </script>

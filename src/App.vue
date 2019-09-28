@@ -23,7 +23,8 @@
     <P11B v-if="currentPage === 21"></P11B>
     <P11C v-if="currentPage === 22"></P11C>
 
-    <div id="audio-wrap" style="width:0;height:0;"></div>
+    <audio :src="music" preload controls hidden loop id="music"></audio>
+
     <div class="menu-board-wrap" :class="{isOpen: isOpen}" v-hammer:tap="tapMenu">
       <ul id="menu">
         <li>
@@ -74,7 +75,10 @@ export default {
   data() {
     return {
       isOpen: false,
-      currentPage: 1
+      currentPage: 1,
+      music: "assets/audio/bg.mp3",
+      // 背景音乐是否在播放
+      playFlag: false
     };
   },
   components: {
@@ -105,20 +109,67 @@ export default {
     this.$root.eventHub.$on("goToPage", to => {
       this.currentPage = to;
     });
+    // this.$root.eventHub.$on("cutMusicEvent", url => {
+    //   this.music = url;
+    //   this.playMusic();
+    // });
     window.addEventListener("resize", this.renderResize, false);
     let $app = $("#app");
     let deviceW = document.documentElement.clientWidth - 38;
     let radio = deviceW / 1334;
+
     $("html").css({ "font-size": 133.4 * radio });
     $app.width(deviceW);
     $app.height((deviceW * 750) / 1334);
     $app.fadeIn(500);
+    $("body").one("click", () => {
+      document.getElementById("music").play();
+    });
+    this.playMusic();
   },
   beforeDestroy() {
     // 移除监听
     window.removeEventListener("resize", this.renderResize, false);
   },
   methods: {
+    playMusic() {
+      var audio = document.getElementById("music");
+      if (audio !== null) {
+        if (this.playFlag) {
+          audio.pause();
+          this.playFlag = false;
+        } else {
+          audio.currentTime = 0;
+          audio.volume = 0.5;
+
+          audio.play();
+          if (window.WeixinJSBridge) {
+            // eslint-disable-next-line
+            WeixinJSBridge.invoke(
+              "getNetworkType",
+              {},
+              function() {
+                audio.play();
+              },
+              false
+            );
+          } else {
+            document.addEventListener(
+              "WeixinJSBridgeReady",
+              function() {
+                // eslint-disable-next-line
+                WeixinJSBridge.invoke("getNetworkType", {}, function() {
+                  audio.play();
+                });
+              },
+              false
+            );
+          }
+
+          this.playFlag = true;
+        }
+      }
+    },
     // selectMenuItem(pageNum) {
     //   this.isOpen = false;
     //   this.$root.eventHub.$emit("goToPage", pageNum);
@@ -130,6 +181,9 @@ export default {
         e.target.tagName.toLowerCase() === "div" &&
         e.target.className.toLowerCase() === "title"
       ) {
+        let audio = document.getElementById("music");
+        audio.src = "assets/audio/bg.mp3";
+        audio.play();
         this.$root.eventHub.$emit("goToPage", $(e.target).data("index"));
         setTimeout(() => {
           this.isOpen = !this.isOpen;
@@ -245,6 +299,13 @@ body {
     transition: border-color 0.3s;
     transition: transform 0.3s;
     background-size: 100% 100%;
+
+    .step-icon {
+      @include px2rem(width, 169);
+      @include px2rem(height, 70);
+      background-size: 100% 100%;
+      position: absolute;
+    }
     &:hover {
       border-color: red;
       transition: border-color 0.3s;

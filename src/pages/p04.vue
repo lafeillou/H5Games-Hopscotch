@@ -1,7 +1,7 @@
 <template>
   <div class="P P04" v-hammer:tap="onTap">
     <video-player :options="videoOptions" />
-    <div class="btn01">How to play</div>
+    <!-- <div class="btn01">How to play</div> -->
   </div>
 </template>
 

@@ -4,7 +4,8 @@ module.exports = {
   //     new MyAwesomeWebpackPlugin()
   //   ]
   // },
-  publicPath: "./",
+  // 本地浏览的情况下，取消下面这行注释
+  // publicPath: "./",
   chainWebpack: config => {
     config.module
       .rule("Snap")

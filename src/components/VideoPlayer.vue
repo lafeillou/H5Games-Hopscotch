@@ -32,7 +32,42 @@ export default {
     };
   },
   mounted() {
-    this.player = videojs(this.$refs.videoPlayer, this.options, () => {});
+    let that = this;
+    this.player = videojs(
+      this.$refs.videoPlayer,
+      this.options,
+      function onPlayerReady() {
+        // console.log(this);
+        var video = this;
+        video.play();
+        if (window.WeixinJSBridge) {
+          // eslint-disable-next-line
+          WeixinJSBridge.invoke(
+            "getNetworkType",
+            {},
+            function() {
+              video.play();
+            },
+            false
+          );
+        } else {
+          document.addEventListener(
+            "WeixinJSBridgeReady",
+            function() {
+              // eslint-disable-next-line
+              WeixinJSBridge.invoke("getNetworkType", {}, function() {
+                video.play();
+              });
+            },
+            false
+          );
+        }
+        video.on("ended", function() {
+          console.log("ended ended");
+          that.$root.eventHub.$emit("videoEnded");
+        });
+      }
+    );
   },
   beforeDestroy() {
     if (this.player) {

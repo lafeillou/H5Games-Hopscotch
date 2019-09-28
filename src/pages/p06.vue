@@ -2,11 +2,21 @@
   <div class="P P06">
     <video-player :options="videoOptions" />
     <div class="btn01">How to play:the details</div>
-    <div class="step step1" v-hammer:tap="() => {goToDelay(7)}"></div>
-    <div class="step step2" v-hammer:tap="() => {goToDelay(8)}"></div>
-    <div class="step step3" v-hammer:tap="() => {goToDelay(9)}"></div>
-    <div class="step step4" v-hammer:tap="() => {goToDelay(10)}"></div>
-    <div class="step step5" v-hammer:tap="() => {goToDelay(11)}"></div>
+    <div class="step step1" v-hammer:tap="() => {goToDelay(7)}">
+      <div class="step-icon step-icon-1"></div>
+    </div>
+    <div class="step step2" v-hammer:tap="() => {goToDelay(8)}">
+      <div class="step-icon step-icon-2"></div>
+    </div>
+    <div class="step step3" v-hammer:tap="() => {goToDelay(9)}">
+      <div class="step-icon step-icon-3"></div>
+    </div>
+    <div class="step step4" v-hammer:tap="() => {goToDelay(10)}">
+      <div class="step-icon step-icon-4"></div>
+    </div>
+    <div class="step step5" v-hammer:tap="() => {goToDelay(11)}">
+      <div class="step-icon step-icon-5"></div>
+    </div>
     <div class="g-btn g-ready-btn" v-hammer:tap="() => {goTo(12)}">Ready</div>
   </div>
 </template>
@@ -95,6 +105,36 @@ export default {
     @include px2rem(left, 906 - 5);
     @include px2rem(top, 427 - 5);
     background: url("../assets/images/steps/step5.png") no-repeat 0 0;
+  }
+
+  .step-icon-1 {
+    @include px2rem(left, 10);
+    @include px2rem(top, -35);
+    background: url("../assets/images/steps/step1_icon.png") no-repeat 0 0;
+  }
+
+  .step-icon-2 {
+    @include px2rem(left, 10);
+    @include px2rem(top, -35);
+    background: url("../assets/images/steps/step2_icon.png") no-repeat 0 0;
+  }
+
+  .step-icon-3 {
+    @include px2rem(left, 10);
+    @include px2rem(top, -35);
+    background: url("../assets/images/steps/step3_icon.png") no-repeat 0 0;
+  }
+
+  .step-icon-4 {
+    @include px2rem(left, 10);
+    @include px2rem(top, -35);
+    background: url("../assets/images/steps/step4_icon.png") no-repeat 0 0;
+  }
+
+  .step-icon-5 {
+    @include px2rem(left, 10);
+    @include px2rem(top, -35);
+    background: url("../assets/images/steps/step5_icon.png") no-repeat 0 0;
   }
 }
 </style>
